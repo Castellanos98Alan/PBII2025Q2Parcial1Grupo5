@@ -14,6 +14,11 @@ public abstract class Producto implements ICalcularPrecioFinal {
 		return precio;
 	}
 
+	
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

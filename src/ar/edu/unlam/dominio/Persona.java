@@ -16,6 +16,11 @@ public class Persona {
 		return dni;
 	}
 
+	
+	public String getNombre() {
+		return nombre;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(dni);

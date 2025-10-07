@@ -17,11 +17,23 @@ public class Bebida extends Producto {
 
 	@Override
 	public Double calcularPrecioFinal() { //G = 10% descuento
-		Double precioFinal = super.getPrecio();
+		Double precioFinal = getPrecio();
+		
 		if(this.tamanio.equalsIgnoreCase("grande")) {
 			Double descuento = (precioFinal * 0.10);
-			precioFinal = precioFinal - descuento;
+			
+			precioFinal= precioFinal - descuento;
+			
+			super.setPrecio(precioFinal);
 		}
 		return precioFinal;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Bebida [getNombre()=" + getNombre() + "]";
+	}
+	
+	
 }

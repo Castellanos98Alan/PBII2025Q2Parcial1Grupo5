@@ -15,13 +15,22 @@ public class Postre extends Producto {
 
 	@Override
 	public Double calcularPrecioFinal() {
-		Double precioFinal = super.getPrecio();
+		Double precioFinal = 0.0;
+		
+		
 		if(this.adicional.equalsIgnoreCase("cafe")){ // adicional de $20
 			precioFinal = super.getPrecio() + 20.0;
+			super.setPrecio(precioFinal);
 		}else if(this.adicional.equalsIgnoreCase("helado")) { // adicional de $40
 			precioFinal = super.getPrecio() + 40.0;
+			super.setPrecio(precioFinal);
 		}
 		return precioFinal;
+	}
+
+	@Override
+	public String toString() {
+		return "Postre [adicional=" + adicional + ", getNombre()=" + getNombre() + "]";
 	}
 	
 	
