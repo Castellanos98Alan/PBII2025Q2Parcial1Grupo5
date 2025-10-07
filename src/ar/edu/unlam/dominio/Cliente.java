@@ -6,7 +6,6 @@ public class Cliente extends Persona {
 
 	public Cliente(String nombre, Integer dni) {
 		super(nombre, dni);
-		// TODO Auto-generated constructor stub
 	}
 
 	public Pedido realizarPedido(Pedido pedido) {
@@ -18,6 +17,8 @@ public class Cliente extends Persona {
 	public String toString() {
 		return "Cliente [pedido=" + pedido + ", getDni()=" + getDni() + "]";
 	}
+
+	
 
 
 }

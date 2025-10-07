@@ -15,6 +15,10 @@ public class Persona {
 	public Integer getDni() {
 		return dni;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
 
 	@Override
 	public int hashCode() {

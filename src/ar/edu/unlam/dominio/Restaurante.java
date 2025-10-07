@@ -4,10 +4,10 @@ import java.util.HashSet;
 
 public class Restaurante {
 
-	private HashSet<Mozo> mozos;
-	private HashSet<Mesa> mesas;
-	private HashSet<Cliente> clientes;
-	private HashSet<Pedido> pedidos;
+	public HashSet<Mozo> mozos;
+	public HashSet<Mesa> mesas;
+	public HashSet<Cliente> clientes;
+	public HashSet<Pedido> pedidos;
 
 	public Restaurante() {
 		mozos = new HashSet<Mozo>();
