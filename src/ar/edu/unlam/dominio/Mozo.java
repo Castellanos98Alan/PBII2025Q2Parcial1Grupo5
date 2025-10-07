@@ -7,14 +7,15 @@ public class Mozo extends Persona {
 
 	private HashSet<Mesa> mesas;
 	private String turno;
+	private String dia;
 	private LocalDateTime comienzoTurno;
 	private LocalDateTime finTurno;
 
-	public Mozo(String nombre, Integer dni, String turno) {
+	public Mozo(String nombre, Integer dni, String turno, String dia) {
 		super(nombre, dni);
 		this.mesas = new HashSet<>();
 		this.turno = turno;
-
+		this.setDia(dia);
 	}
 
 	public void agregarMesa(Mesa mesa) {
@@ -55,5 +56,12 @@ public class Mozo extends Persona {
 		this.finTurno = finTurno;
 	}
 
-	
+	public String getDia() {
+		return dia;
+	}
+
+	public void setDia(String dia) {
+		this.dia = dia;
+	}
+
 }

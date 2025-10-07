@@ -1,6 +1,8 @@
 package ar.edu.unlam.dominio;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class Restaurante {
 
@@ -8,12 +10,14 @@ public class Restaurante {
 	public HashSet<Mesa> mesas;
 	public HashSet<Cliente> clientes;
 	public HashSet<Pedido> pedidos;
+	public List<AsignacionMesaMozo> asigns;
 
 	public Restaurante() {
 		mozos = new HashSet<Mozo>();
 		mesas = new HashSet<>();
 		clientes = new HashSet<>();
 		pedidos = new HashSet<>();
+		asigns = new ArrayList<>();
 	}
 
 	public Boolean agregarMozo(Mozo mozo) {
@@ -32,15 +36,18 @@ public class Restaurante {
 		return this.pedidos.add(pedido);
 	}
 
-	public Boolean asignarMesaAMozo(Integer dniMozo, Integer numeroMesa) {
-
+	public boolean agregarAsignacion(Integer dniMozo, Integer numeroMesa) {
 		Boolean fueAsignada = false;
 
 		Mozo mozoEncontrado = buscarMozoPorDni(dniMozo);
 		Mesa mesaEncontrada = buscarMesaPorId(numeroMesa);
 
 		if (mozoEncontrado != null && mesaEncontrada != null) {
-			mozoEncontrado.agregarMesa(mesaEncontrada);
+
+			AsignacionMesaMozo newAsign = new AsignacionMesaMozo(mozoEncontrado, mesaEncontrada,
+					mozoEncontrado.getTurno());
+			asigns.add(newAsign);
+
 			fueAsignada = true;
 		}
 
@@ -68,7 +75,6 @@ public class Restaurante {
 		}
 		return mozoEncontrado;
 	}
-
 
 	public Boolean asignarPedidoAMesa(Integer pedidoId, Integer mesaId) {
 		Boolean fueAsignado = false;
@@ -102,4 +108,5 @@ public class Restaurante {
 		}
 		return seCambio;
 	}
+
 }
